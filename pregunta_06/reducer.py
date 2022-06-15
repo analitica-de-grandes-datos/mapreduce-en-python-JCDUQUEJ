@@ -26,3 +26,4 @@ if __name__ == '__main__':
             curkey = key
             min = val
             max = val
+    sys.stdout.write("{}\t{}\t{}\n".format(curkey, max, min))
