@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     for line in sys.stdin:
 
-        key, val = line.split('\t')
+        key, val = line.replace('\n','').split('\t')
 
         if key == curkey:
             if val > max:
@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
         else:
             if curkey is not None:
-                sys.stdout.write("{}\t{}\t{}\n".format(curkey, max, min))
+                sys.stdout.write('{}\t{}\t{}\n'.format(curkey, max, min))
 
             curkey = key
             min = val

@@ -26,6 +26,6 @@ if __name__ == '__main__':
             curkey = key
             total = val1
             cuenta = val2
-            promedio = val1/val2
+            promedio = total/cuenta
 
     sys.stdout.write("{}\t{}\t{}\n".format(curkey, total, promedio))
