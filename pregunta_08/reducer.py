@@ -17,7 +17,7 @@ if __name__ == '__main__':
         if key == curkey:
             total += val1
             cuenta += val2
-            promedio = '{:1f}'.format(total/cuenta)
+            promedio = total/cuenta
 
         else:
             if curkey is not None:
