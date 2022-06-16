@@ -4,4 +4,5 @@
 import sys
 if __name__ == '__main__':
     for row in sys.stdin:
-        sys.stdout.write("{}\t{}\n".format(row.split(',')[3],row.split(',')[4]))
+        word = row.split(',')
+        sys.stdout.write("{}\t{}\n".format(word[3],word[4]))

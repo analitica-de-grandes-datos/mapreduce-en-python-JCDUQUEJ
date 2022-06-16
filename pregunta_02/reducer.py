@@ -13,7 +13,8 @@ if __name__ == '__main__':
         val = int(val)
 
         if key == curkey:
-            total += val
+            if val > total:
+                total = val
         
         else:
             if curkey is not None:
