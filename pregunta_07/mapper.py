@@ -4,14 +4,7 @@
 import sys
 from operator import itemgetter
 if __name__ == '__main__':
-    df = sys.stdin
-    for line in df:
+    for line in sys.stdin:
         line = line.replace('\n','').split('\t')
-
-    dfsort = sorted(df,key=itemgetter(2), reverse = False)
-    dfsort = dfsort[:6]
-
-    for row in dfsort:
-        row1 = row.replace('\n','').split('   ')
-        sys.stdout.write('{}\t{}\t{}\n'.format(row1[0], row1[1], row1[2]))
+        sys.stdout.write('{}\t{}\t{}\n'.format(line[0], line[1], line[2]))
 
