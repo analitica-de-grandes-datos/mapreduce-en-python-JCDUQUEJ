@@ -6,8 +6,7 @@ from operator import itemgetter
 
 if __name__ == '__main__':
 
-    curkey = None
-    total = ''
+
     tablefile = [lines.replace("\n", "").split('\t') for lines in sys.stdin]
 
     list_dict0=[]
@@ -20,10 +19,13 @@ if __name__ == '__main__':
     data = list(zip(list_dict0, list_dict1))
     data = sorted(data, key = itemgetter(0,1), reverse = False)
 
-    for line in data:
+    curkey = None
+    total = ''
 
-        key = line[0]
-        val = line[1]
+    for lineas in data:
+
+        key = lineas[0]
+        val = lineas[1]
 
         if key == curkey:
             total +=  ',' + str(val)
@@ -34,5 +36,5 @@ if __name__ == '__main__':
 
             curkey = key
             total = str(val)
-
+    sys.stdout.write("{}\t{}\n".format(curkey, total))
 
