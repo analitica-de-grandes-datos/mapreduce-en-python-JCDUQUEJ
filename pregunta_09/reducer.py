@@ -2,28 +2,22 @@
 # >>> Escriba el codigo del reducer a partir de este punto <<<
 #
 import sys
+from operator import itemgetter
+
 if __name__ == '__main__':
+    tablefile = [lines.replace("\n", "").split('\t') for lines in sys.stdin]
 
-    curkey = None
-    min = 0
-    max = 0
+    list_dict0=[]
+    list_dict1=[]
+    list_dict2=[]
 
-    for line in sys.stdin:
+    for i in tablefile:
+        list_dict0.append(i[0])
+        list_dict1.append(i[1])
+        list_dict2.append(int(i[2]))
 
-        key, val = line.replace('\n','').split('\t')
+    data = list(zip(list_dict0, list_dict1, list_dict2))
+    result = sorted(data, key=itemgetter(2), reverse = False)
 
-        if key == curkey:
-            if val > max:
-                max = val
-
-            if val  < min:
-                min = val
-
-        else:
-            if curkey is not None:
-                sys.stdout.write('{}\t{}\t{}\n'.format(curkey, max, min))
-
-            curkey = key
-            min = val
-            max = val
-    sys.stdout.write("{}\t{}\t{}\n".format(curkey, max, min))
+    for lineas in result[:6]:
+        sys.stdout.write('{}   {}   {}\n'.format(lineas[0], lineas[1], lineas[2]))
