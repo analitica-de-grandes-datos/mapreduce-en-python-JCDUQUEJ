@@ -20,4 +20,4 @@ if __name__ == '__main__':
     result = sorted(data, key=itemgetter(0,2), reverse = False)
 
     for lineas in result:
-        sys.stdout.write('{}\t{}\t{}\n'.format(lineas[0], lineas[1], lineas[2]))
+        sys.stdout.write('{}   {}   {}\n'.format(lineas[0], lineas[1], lineas[2]))
